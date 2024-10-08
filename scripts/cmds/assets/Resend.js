@@ -1,4 +1,4 @@
-const request = require('request');
++cmd install resend.js const request = require('request');
 const fs = require('fs');
 const axios = require('axios');
 
@@ -41,10 +41,11 @@ module.exports = {
       const name = await usersData.getName(senderID);
       if (getMsg.attachment[0] === undefined) {
         if (getMsg.type === 'message') {
-          api.sendMessage(`🎯${name}🎯\n Il a essayé de nous cacher un putain de truc, on n'est cache rien ici, sachez que les bots n'ont pas de secret\n━━━━━━━━━━━━━━━━\n${getMsg.msgBody}`, threadID);
+          api.sendMessage(`🎯${name}🎯\nIl 𝑰𝒍 𝑎 𝑒𝒔𝒔𝑎𝒚é 𝑑𝑒 𝒏𝒐𝒖𝒔 𝑐𝑎𝑐𝒉𝑒🔕🛡️ 𝒖𝒏 𝒑𝒖𝒕𝑎𝒊𝒏 𝒕𝒓𝒖𝑐⭕ , 𝒎𝑒𝑐 𝒐𝒏 𝒏'𝑒𝒔𝒕 𝑐𝑎𝑐𝒉𝑒 𝒓𝒊𝑒𝒏 𝒊𝑐𝒊 📜🪤, 𝒔𝑎𝑐𝒉𝑒𝒛 𝒒𝒖𝑒 𝒍𝑒 𝑏𝒐𝒕 𝒏'𝒐𝒏𝒕 𝒑𝑎𝒔 𝑑𝑒 𝒔𝑒𝑐𝒓𝑒𝒕🔑🙎📿\n━━━━━━━━━━━━━━━━\n${getMsg.msgBody}`, threadID);
         } else if (getMsg.type === 'photo' || getMsg.type === 'video') {
           // Resend the image or video here
           api.sendMessage({ attachment: getMsg.attachment }, threadID);
+        }
       } else {
         let num = 0;
         let msg = {
